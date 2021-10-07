@@ -1,5 +1,4 @@
 
-
 val list = arrayOf("Rock", "Paper", "Scissors")
 var random = list.random()
 var userChoice = "Rock"
@@ -15,6 +14,21 @@ fun main(){
         println("Tie")
     }
     if (random == "Rock" && userChoice == "Paper") {
+        println("You win!")
+    }
+    if (random == "Rock" && userChoice == "Scissors") {
+        println("You lose!")
+    }
+    if (random == "Paper" && userChoice == "Rock") {
+        println("You lose!")
+    }
+    if (random == "Paper" && userChoice == "Scissors") {
+        println("You win!")
+    }
+    if (random == "Scissors" && userChoice == "Paper") {
+        println("You lose!")
+    }
+    if (random == "Scissors" && userChoice == "Rock") {
         println("You win!")
     }
 }
