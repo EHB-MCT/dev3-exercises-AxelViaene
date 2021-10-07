@@ -1,35 +1,42 @@
 
 val list = arrayOf("Rock", "Paper", "Scissors")
-var random = list.random()
-var userChoice = "Rock"
+var computer = list.random()
 
-fun main(){
-    if (random == "Rock" && userChoice == "Rock") {
+var userChoice = getUserChoice2()
+
+fun getUserChoice2() : String? {
+    print("your choice: ")
+
+val enteredString = readLine()
+    return enteredString
+}
+
+fun main() {
+    if (computer == userChoice) {
         println("Tie")
     }
-    if (random == "Paper" && userChoice == "Paper") {
-        println("Tie")
+
+    if (computer == "Rock") {
+        if (userChoice == "Paper") {
+            println("You win")
+        } else {
+            println("You lose")
+        }
     }
-    if (random == "Scissors" && userChoice == "Scissors") {
-        println("Tie")
+
+    if (computer == "Paper") {
+        if (userChoice == "Scissors") {
+            println("You win")
+        } else {
+            println("You lose")
+        }
     }
-    if (random == "Rock" && userChoice == "Paper") {
-        println("You win!")
-    }
-    if (random == "Rock" && userChoice == "Scissors") {
-        println("You lose!")
-    }
-    if (random == "Paper" && userChoice == "Rock") {
-        println("You lose!")
-    }
-    if (random == "Paper" && userChoice == "Scissors") {
-        println("You win!")
-    }
-    if (random == "Scissors" && userChoice == "Paper") {
-        println("You lose!")
-    }
-    if (random == "Scissors" && userChoice == "Rock") {
-        println("You win!")
+    if (computer == "Scissors") {
+    if (userChoice == "Rock") {
+        println("You win")
+    } else {
+        println("You lose")
     }
 }
 
+}
