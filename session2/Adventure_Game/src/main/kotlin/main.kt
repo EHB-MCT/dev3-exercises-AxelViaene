@@ -34,9 +34,26 @@ var acceptedAnswers = setOf<Int>()
 
     if (acceptedAnswers.contains(randomNumber)) {
        println("Correct")
+        challengeThree()
     }
     else {
     println("Game Over")
     }
 }
 
+fun challengeThree(){
+    println("You face a Balrog from the deep, choose your weapon: bow, staff or sword.")
+    val answers = setOf("sword", "bow", "staff")
+    var userAnswer = readLine()
+    if (userAnswer == "sword"){
+        println("game over")
+    }
+    if (userAnswer == "bow"){
+        println("You are driven back but manage to retreat.")
+        challengeTwo()
+    }
+    if (userAnswer == "staff"){
+        println("You shall not pass! Balrog defeated")
+       
+    }
+}
