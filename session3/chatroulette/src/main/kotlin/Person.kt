@@ -1,11 +1,9 @@
-open class Person(
-   open val name: String
-) {
-    fun introduce() {
+open class Person(open val name: String):ChatPartner {
+  override  fun introduce() {
         println("Hello my name is $name")
     }
 
-   open fun talk(){
+   override fun talk(){
     println("I am aliiiive")
     }
 
