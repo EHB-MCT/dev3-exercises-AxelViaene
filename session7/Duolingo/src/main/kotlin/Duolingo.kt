@@ -1,20 +1,26 @@
-class Duolingo {
+class Duolingo() {
+
 
     val words = setOf<Word>(
-    Word("ichi", "een", "Japanese"), Word("ni", "twee", "Japanese"),
-    Word("san", "drie", "Japanese"),
-    Word("yon", "vier", "Japanese"),
     Word("mizu", "water", "Japanese"),
     Word("migi", "links", "Japanese"),
-    Word("juu", "tien", "Japanese"),
     Word("kane", "geld", "Japanese"),
     Word("tabun", "waarschijnlijk", "Japanese"),
-    Word("kimi", "jouw", "Japanese")
+    Word("kimi", "jouw", "Japanese"),
+    Word("tea", "thee", "English"),
+    Word("biscuit", "koekje", "English"),
+    Word("beans", "bonen", "English"),
+    Word("rain", "regen", "English"),
+    Word("mate", "maat", "English")
     )
 
 
     fun play(){
-   val selectedwords = words.shuffled().take(5).toMutableSet()
+
+        println("How many rounds?")
+        val wordAmount = readLine()!!.toInt()
+        val selectedLanguage = "Japanese"
+        val selectedwords = words.shuffled().filter { it.language == "Japanese" }.take(wordAmount).toMutableSet()
 
         while (selectedwords.count() > 0){
             val selectedword = selectedwords.random()
