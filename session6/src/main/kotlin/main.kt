@@ -21,9 +21,10 @@ fun main() {
     println("Where would you like to go?")
     var userDestination = readLine()
 
+
     val statement = connection.prepareStatement("SELECT name, departure_time, city.id FROM city " +
             "LEFT JOIN rides ON rides.destination_city_id = city.id " +
-            "WHERE name = ? ORDER BY departure_time ASC LIMIT 1")
+            "WHERE name = ? ORDER BY departure_time ASC LIMIT 4")
     statement.setString(1,userDestination)
     val result = statement.executeQuery()
     while(result.next()) {
